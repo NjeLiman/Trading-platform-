@@ -1,0 +1,1472 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untitled</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="30a5a6f6-1acf-809b-a845-e92168a0ce65" class="page sans"><header><h1 class="page-title" dir="auto"></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="30a5a6f6-1acf-8099-b033-f80810311187" class="">&lt;!DOCTYPE html&gt;</p></div><div style="display:contents" dir="auto"><p id="30a5a6f6-1acf-809f-ae06-c8d3d8c7ee7d" class="">&lt;html lang=&quot;en&quot;&gt;<br/>&lt;head&gt;<br/>&lt;meta charset=&quot;UTF-8&quot;&gt;<br/>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;&gt;<br/>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;<br/>&lt;meta name=&quot;mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;<br/>&lt;title&gt;Professional Trading Platform&lt;/title&gt;<br/>&lt;script crossorigin src=&quot;<a href="https://unpkg.com/react@18/umd/react.production.min.js">https://unpkg.com/react@18/umd/react.production.min.js</a>&quot;&gt;&lt;/script&gt;<br/>&lt;script crossorigin src=&quot;<a href="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js">https://unpkg.com/react-dom@18/umd/react-dom.production.min.js</a>&quot;&gt;&lt;/script&gt;<br/>&lt;script src=&quot;<a href="https://unpkg.com/@babel/standalone/babel.min.js">https://unpkg.com/@babel/standalone/babel.min.js</a>&quot;&gt;&lt;/script&gt;<br/>&lt;script src=&quot;<a href="https://cdn.tailwindcss.com/">https://cdn.tailwindcss.com</a>&quot;&gt;&lt;/script&gt;<br/>&lt;style&gt;<br/>body {<br/>margin: 0;<br/>font-family: -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, &#x27;Roboto&#x27;, &#x27;Oxygen&#x27;, sans-serif;<br/>-webkit-font-smoothing: antialiased;<br/>overflow-x: hidden;<br/>}<br/>.animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }<br/>@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }<br/>.animate-spin { animation: spin 1s linear infinite; }<br/>@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="30a5a6f6-1acf-80d9-bcb1-ed454a3110bc" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">    /* PWA Icons */
+    .icon { stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+
+    /* Loading animation */
+    .loading-dots span {
+        animation: loading 1.4s infinite ease-in-out both;
+    }
+    .loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+    .loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+    @keyframes loading {
+        0%, 80%, 100% { transform: scale(0); opacity: 0.5; }
+        40% { transform: scale(1); opacity: 1; }
+    }
+&lt;/style&gt;</code></pre></div><div style="display:contents" dir="auto"><p id="30a5a6f6-1acf-80de-9e72-de63c4145e11" class="">&lt;/head&gt;<br/>&lt;body&gt;<br/>&lt;div id=&quot;root&quot;&gt;&lt;/div&gt;</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="30a5a6f6-1acf-80b4-bf08-f6f7be2f0f3e" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">&lt;script type=&quot;text/babel&quot;&gt;
+    const { useState, useEffect, useRef } = React;
+
+    // Lucide Icons as inline SVG
+    const Home = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;path d=&quot;m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z&quot;/&gt;&lt;polyline points=&quot;9 22 9 12 15 12 15 22&quot;/&gt;&lt;/svg&gt;;
+    const PieChart = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;path d=&quot;M21.21 15.89A10 10 0 1 1 8 2.83&quot;/&gt;&lt;path d=&quot;M22 12A10 10 0 0 0 12 2v10z&quot;/&gt;&lt;/svg&gt;;
+    const Filter = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;polygon points=&quot;22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3&quot;/&gt;&lt;/svg&gt;;
+    const Activity = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;polyline points=&quot;22 12 18 12 15 21 9 3 6 12 2 12&quot;/&gt;&lt;/svg&gt;;
+    const Target = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot;/&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;6&quot;/&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;2&quot;/&gt;&lt;/svg&gt;;
+    const Settings = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;3&quot;/&gt;&lt;path d=&quot;M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24&quot;/&gt;&lt;/svg&gt;;
+    const Menu = () =&gt; &lt;svg className=&quot;icon w-6 h-6&quot;&gt;&lt;line x1=&quot;3&quot; y1=&quot;12&quot; x2=&quot;21&quot; y2=&quot;12&quot;/&gt;&lt;line x1=&quot;3&quot; y1=&quot;6&quot; x2=&quot;21&quot; y2=&quot;6&quot;/&gt;&lt;line x1=&quot;3&quot; y1=&quot;18&quot; x2=&quot;21&quot; y2=&quot;18&quot;/&gt;&lt;/svg&gt;;
+    const X = () =&gt; &lt;svg className=&quot;icon w-6 h-6&quot;&gt;&lt;line x1=&quot;18&quot; y1=&quot;6&quot; x2=&quot;6&quot; y2=&quot;18&quot;/&gt;&lt;line x1=&quot;6&quot; y1=&quot;6&quot; x2=&quot;18&quot; y2=&quot;18&quot;/&gt;&lt;/svg&gt;;
+    const Search = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;circle cx=&quot;11&quot; cy=&quot;11&quot; r=&quot;8&quot;/&gt;&lt;path d=&quot;m21 21-4.35-4.35&quot;/&gt;&lt;/svg&gt;;
+    const RefreshCw = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;polyline points=&quot;23 4 23 10 17 10&quot;/&gt;&lt;polyline points=&quot;1 20 1 14 7 14&quot;/&gt;&lt;path d=&quot;M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15&quot;/&gt;&lt;/svg&gt;;
+    const Plus = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;line x1=&quot;12&quot; y1=&quot;5&quot; x2=&quot;12&quot; y2=&quot;19&quot;/&gt;&lt;line x1=&quot;5&quot; y1=&quot;12&quot; x2=&quot;19&quot; y2=&quot;12&quot;/&gt;&lt;/svg&gt;;
+    const Play = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;polygon points=&quot;5 3 19 12 5 21 5 3&quot;/&gt;&lt;/svg&gt;;
+    const TrendingUp = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;polyline points=&quot;23 6 13.5 15.5 8.5 10.5 1 18&quot;/&gt;&lt;polyline points=&quot;17 6 23 6 23 12&quot;/&gt;&lt;/svg&gt;;
+    const TrendingDown = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;polyline points=&quot;23 18 13.5 8.5 8.5 13.5 1 6&quot;/&gt;&lt;polyline points=&quot;17 18 23 18 23 12&quot;/&gt;&lt;/svg&gt;;
+    const Zap = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;polygon points=&quot;13 2 3 14 12 14 11 22 21 10 12 10 13 2&quot;/&gt;&lt;/svg&gt;;
+    const Trash2 = () =&gt; &lt;svg className=&quot;icon w-4 h-4&quot;&gt;&lt;polyline points=&quot;3 6 5 6 21 6&quot;/&gt;&lt;path d=&quot;M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2&quot;/&gt;&lt;line x1=&quot;10&quot; y1=&quot;11&quot; x2=&quot;10&quot; y2=&quot;17&quot;/&gt;&lt;line x1=&quot;14&quot; y1=&quot;11&quot; x2=&quot;14&quot; y2=&quot;17&quot;/&gt;&lt;/svg&gt;;
+    const CheckCircle = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;path d=&quot;M22 11.08V12a10 10 0 1 1-5.93-9.14&quot;/&gt;&lt;polyline points=&quot;22 4 12 14.01 9 11.01&quot;/&gt;&lt;/svg&gt;;
+    const AlertCircle = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot;/&gt;&lt;line x1=&quot;12&quot; y1=&quot;8&quot; x2=&quot;12&quot; y2=&quot;12&quot;/&gt;&lt;line x1=&quot;12&quot; y1=&quot;16&quot; x2=&quot;12.01&quot; y2=&quot;16&quot;/&gt;&lt;/svg&gt;;
+    const Database = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;ellipse cx=&quot;12&quot; cy=&quot;5&quot; rx=&quot;9&quot; ry=&quot;3&quot;/&gt;&lt;path d=&quot;M21 12c0 1.66-4 3-9 3s-9-1.34-9-3&quot;/&gt;&lt;path d=&quot;M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5&quot;/&gt;&lt;/svg&gt;;
+    const DollarSign = () =&gt; &lt;svg className=&quot;icon w-5 h-5&quot;&gt;&lt;line x1=&quot;12&quot; y1=&quot;1&quot; x2=&quot;12&quot; y2=&quot;23&quot;/&gt;&lt;path d=&quot;M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6&quot;/&gt;&lt;/svg&gt;;
+    const BarChart3 = () =&gt; &lt;svg className=&quot;icon w-7 h-7&quot;&gt;&lt;path d=&quot;M3 3v18h18&quot;/&gt;&lt;path d=&quot;M18 17V9&quot;/&gt;&lt;path d=&quot;M13 17V5&quot;/&gt;&lt;path d=&quot;M8 17v-3&quot;/&gt;&lt;/svg&gt;;
+
+    const TradingPlatform = () =&gt; {
+        const [activeTab, setActiveTab] = useState(&#x27;home&#x27;);
+        const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+        // API Configuration - Stored in localStorage
+        const [apiConfig, setApiConfig] = useState(() =&gt; {
+            const saved = localStorage.getItem(&#x27;apiConfig&#x27;);
+            return saved ? JSON.parse(saved) : {
+                provider: &#x27;alphavantage&#x27;,
+                apiKey: &#x27;&#x27;,
+                enabled: false
+            };
+        });
+
+        // Save API config to localStorage
+        useEffect(() =&gt; {
+            localStorage.setItem(&#x27;apiConfig&#x27;, JSON.stringify(apiConfig));
+        }, [apiConfig]);
+
+        // Portfolio State - Stored in localStorage
+        const [portfolio, setPortfolio] = useState(() =&gt; {
+            const saved = localStorage.getItem(&#x27;portfolio&#x27;);
+            return saved ? JSON.parse(saved) : [
+                { symbol: &#x27;AAPL&#x27;, name: &#x27;Apple Inc&#x27;, shares: 100, avgPrice: 150.00, currentPrice: 185.50, sector: &#x27;Technology&#x27;, beta: 1.2, volatility: 0.22 },
+                { symbol: &#x27;MSFT&#x27;, name: &#x27;Microsoft&#x27;, shares: 50, avgPrice: 300.00, currentPrice: 402.50, sector: &#x27;Technology&#x27;, beta: 1.0, volatility: 0.20 },
+                { symbol: &#x27;NVDA&#x27;, name: &#x27;NVIDIA&#x27;, shares: 75, avgPrice: 80.00, currentPrice: 495.30, sector: &#x27;Technology&#x27;, beta: 2.4, volatility: 0.49 },
+            ];
+        });
+
+        // Save portfolio to localStorage
+        useEffect(() =&gt; {
+            localStorage.setItem(&#x27;portfolio&#x27;, JSON.stringify(portfolio));
+        }, [portfolio]);
+
+        const [newStock, setNewStock] = useState({ symbol: &#x27;&#x27;, shares: &#x27;&#x27;, avgPrice: &#x27;&#x27; });
+        const [lookupLoading, setLookupLoading] = useState(false);
+        const [editingStock, setEditingStock] = useState(null);
+
+        // Screener state
+        const [screenerCriteria, setScreenerCriteria] = useState({
+            minPrice: 0,
+            maxPrice: 10000,
+            minMarketCap: 0,
+            maxMarketCap: 5000,
+            technicalPattern: &#x27;all&#x27;,
+        });
+        const [screenerResults, setScreenerResults] = useState([]);
+        const [screenerLoading, setScreenerLoading] = useState(false);
+        const [searchSymbols, setSearchSymbols] = useState(&#x27;&#x27;);
+
+        // Backtesting state
+        const [backtestConfig, setBacktestConfig] = useState({
+            strategy: &#x27;rsi_oversold&#x27;,
+            initialCapital: 10000,
+            positionSize: 0.1,
+            stopLoss: 0.05,
+            takeProfit: 0.10,
+            rsiBuyThreshold: 30,
+            rsiSellThreshold: 70,
+        });
+        const [backtestResults, setBacktestResults] = useState(null);
+        const [backtestRunning, setBacktestRunning] = useState(false);
+
+        // Trading signals
+        const [tradingSignals, setTradingSignals] = useState([]);
+
+        // ========== UNIVERSAL API FUNCTIONS ==========
+
+        // Fetch quote for ANY stock
+        const fetchUniversalQuote = async (symbol) =&gt; {
+            if (!apiConfig.enabled || !apiConfig.apiKey) {
+                console.log(&#x27;API not configured&#x27;);
+                return null;
+            }
+
+            try {
+                let quote = null;
+
+                if (apiConfig.provider === &#x27;alphavantage&#x27;) {
+                    const response = await fetch(
+                        `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&amp;symbol=${symbol}&amp;apikey=${apiConfig.apiKey}`
+                    );
+                    const data = await response.json();
+
+                    if (data[&#x27;Global Quote&#x27;] &amp;&amp; Object.keys(data[&#x27;Global Quote&#x27;]).length &gt; 0) {
+                        const q = data[&#x27;Global Quote&#x27;];
+                        quote = {
+                            symbol,
+                            name: symbol,
+                            price: parseFloat(q[&#x27;05. price&#x27;]),
+                            change: parseFloat(q[&#x27;09. change&#x27;]),
+                            changePercent: parseFloat(q[&#x27;10. change percent&#x27;].replace(&#x27;%&#x27;, &#x27;&#x27;)),
+                            volume: parseInt(q[&#x27;06. volume&#x27;]),
+                            high: parseFloat(q[&#x27;03. high&#x27;]),
+                            low: parseFloat(q[&#x27;04. low&#x27;]),
+                        };
+                    } else if (data[&#x27;Note&#x27;]) {
+                        alert(&#x27;API rate limit reached. Please wait 1 minute or use Finnhub.&#x27;);
+                        return null;
+                    }
+                } else if (apiConfig.provider === &#x27;finnhub&#x27;) {
+                    const response = await fetch(
+                        `https://finnhub.io/api/v1/quote?symbol=${symbol}&amp;token=${apiConfig.apiKey}`
+                    );
+                    const data = await response.json();
+
+                    if (data.c &gt; 0) {
+                        quote = {
+                            symbol,
+                            name: symbol,
+                            price: data.c,
+                            change: data.d,
+                            changePercent: data.dp,
+                            high: data.h,
+                            low: data.l,
+                        };
+                    }
+                }
+
+                return quote;
+            } catch (error) {
+                console.error(&#x27;Error fetching quote:&#x27;, error);
+                return null;
+            }
+        };
+
+        // Search for ANY stock symbol
+        const searchStocks = async (query) =&gt; {
+            if (!query || query.length &lt; 1) return [];
+            if (!apiConfig.enabled || !apiConfig.apiKey) {
+                alert(&#x27;Please configure API in Settings to search stocks&#x27;);
+                return [];
+            }
+
+            setScreenerLoading(true);
+            const symbols = query.split(&#x27;,&#x27;).map(s =&gt; s.trim().toUpperCase()).filter(s =&gt; s.length &gt; 0);
+            const results = [];
+
+            for (const symbol of symbols) {
+                const quote = await fetchUniversalQuote(symbol);
+                if (quote) {
+                    results.push({
+                        ...quote,
+                        marketCap: 0,
+                        pe: 0,
+                        dividendYield: 0,
+                        beta: 1.0,
+                        rsi: 50,
+                        sector: &#x27;Unknown&#x27;
+                    });
+                }
+            }
+
+            setScreenerResults(results);
+            setScreenerLoading(false);
+            return results;
+        };
+
+        // Auto-lookup when adding stock
+        const handleSymbolLookup = async (symbol) =&gt; {
+            if (symbol.length &lt; 1) return;
+
+            setLookupLoading(true);
+            const quote = await fetchUniversalQuote(symbol.toUpperCase());
+
+            if (quote) {
+                setNewStock(prev =&gt; ({
+                    ...prev,
+                    symbol: symbol.toUpperCase(),
+                    avgPrice: quote.price.toFixed(2)
+                }));
+            }
+            setLookupLoading(false);
+        };
+
+        // Update portfolio prices
+        const updateAllPrices = async () =&gt; {
+            if (!apiConfig.enabled || !apiConfig.apiKey) {
+                alert(&#x27;Please configure API in Settings to update prices&#x27;);
+                return;
+            }
+
+            for (const stock of portfolio) {
+                const quote = await fetchUniversalQuote(stock.symbol);
+                if (quote) {
+                    setPortfolio(prev =&gt; prev.map(s =&gt;
+                        s.symbol === stock.symbol ? { ...s, currentPrice: quote.price } : s
+                    ));
+                }
+                // Add small delay to avoid rate limiting
+                await new Promise(resolve =&gt; setTimeout(resolve, 1000));
+            }
+        };
+
+        // Add stock
+        const addStock = async () =&gt; {
+            if (!newStock.symbol || !newStock.shares || !newStock.avgPrice) {
+                alert(&#x27;Please fill all fields&#x27;);
+                return;
+            }
+
+            const stock = {
+                symbol: newStock.symbol.toUpperCase(),
+                name: newStock.symbol.toUpperCase(),
+                shares: parseFloat(newStock.shares),
+                avgPrice: parseFloat(newStock.avgPrice),
+                currentPrice: parseFloat(newStock.avgPrice),
+                sector: &#x27;Technology&#x27;,
+                beta: 1.0,
+                volatility: 0.25
+            };
+
+            setPortfolio([...portfolio, stock]);
+            setNewStock({ symbol: &#x27;&#x27;, shares: &#x27;&#x27;, avgPrice: &#x27;&#x27; });
+            setEditingStock(null);
+        };
+
+        const removeStock = (index) =&gt; {
+            if (window.confirm(&#x27;Remove this stock?&#x27;)) {
+                setPortfolio(portfolio.filter((_, i) =&gt; i !== index));
+            }
+        };
+
+        // Backtesting
+        const runBacktest = () =&gt; {
+            setBacktestRunning(true);
+            setTimeout(() =&gt; {
+                const results = performBacktest();
+                setBacktestResults(results);
+                setBacktestRunning(false);
+            }, 2000);
+        };
+
+        const performBacktest = () =&gt; {
+            let capital = backtestConfig.initialCapital;
+            let shares = 0;
+            let trades = [];
+            let equity = [capital];
+            const days = 250;
+
+            let price = 180;
+            const prices = [];
+            for (let i = 0; i &lt; days + 200; i++) {
+                price *= (1 + (Math.random() - 0.48) * 0.02);
+                prices.push(price);
+            }
+
+            const rsiValues = [];
+            for (let d = 0; d &lt; days; d++) {
+                const day = d + 200;
+                let gains = 0, losses = 0;
+                for (let i = day - 14; i &lt; day; i++) {
+                    const change = prices[i] - prices[i - 1];
+                    if (change &gt; 0) gains += change;
+                    else losses -= change;
+                }
+                const rs = (gains / 14) / (losses / 14);
+                rsiValues.push(100 - (100 / (1 + rs)));
+            }
+
+            for (let d = 0; d &lt; days; d++) {
+                const p = prices[d + 200];
+                const rsi = rsiValues[d];
+
+                if (rsi &lt; backtestConfig.rsiBuyThreshold &amp;&amp; capital &gt; 0 &amp;&amp; shares === 0) {
+                    const invest = capital * backtestConfig.positionSize;
+                    const buyShares = Math.floor(invest / p);
+                    if (buyShares &gt; 0) {
+                        shares = buyShares;
+                        capital -= buyShares * p;
+                        trades.push({ type: &#x27;BUY&#x27;, price: p.toFixed(2), shares: buyShares });
+                    }
+                } else if (shares &gt; 0) {
+                    const entryPrice = parseFloat(trades[trades.length - 1].price);
+                    const stopPrice = entryPrice * (1 - backtestConfig.stopLoss);
+                    const targetPrice = entryPrice * (1 + backtestConfig.takeProfit);
+
+                    if (p &lt;= stopPrice || p &gt;= targetPrice || rsi &gt; backtestConfig.rsiSellThreshold) {
+                        capital += shares * p;
+                        const profit = (p - entryPrice) * shares;
+                        trades.push({ type: &#x27;SELL&#x27;, price: p.toFixed(2), shares, profit: profit.toFixed(2) });
+                        shares = 0;
+                    }
+                }
+
+                equity.push(capital + shares * p);
+            }
+
+            if (shares &gt; 0) {
+                capital += shares * prices[prices.length - 1];
+            }
+
+            const finalEquity = capital;
+            const totalReturn = ((finalEquity - backtestConfig.initialCapital) / backtestConfig.initialCapital * 100);
+            const sellTrades = trades.filter(t =&gt; t.type === &#x27;SELL&#x27;);
+            const winTrades = sellTrades.filter(t =&gt; parseFloat(t.profit) &gt; 0);
+
+            return {
+                finalEquity: finalEquity.toFixed(2),
+                totalReturn: totalReturn.toFixed(2),
+                totalTrades: sellTrades.length,
+                winningTrades: winTrades.length,
+                winRate: sellTrades.length &gt; 0 ? ((winTrades.length / sellTrades.length) * 100).toFixed(1) : 0,
+                trades: trades.slice(-20)
+            };
+        };
+
+        // Generate signals
+        const generateSignals = () =&gt; {
+            const signals = portfolio.map(stock =&gt; {
+                const rsi = 50 + (Math.random() - 0.5) * 40;
+                let signal = &#x27;HOLD&#x27;;
+                let confidence = 50;
+                let reason = &#x27;No clear signal&#x27;;
+
+                if (rsi &lt; 30) {
+                    signal = &#x27;BUY&#x27;;
+                    confidence = 75;
+                    reason = `RSI oversold (${rsi.toFixed(1)})`;
+                } else if (rsi &gt; 70) {
+                    signal = &#x27;SELL&#x27;;
+                    confidence = 75;
+                    reason = `RSI overbought (${rsi.toFixed(1)})`;
+                }
+
+                return {
+                    ...stock,
+                    signal,
+                    confidence: confidence.toFixed(0),
+                    reason,
+                    target: signal === &#x27;BUY&#x27; ? stock.currentPrice * 1.05 : stock.currentPrice * 0.95,
+                    stopLoss: signal === &#x27;BUY&#x27; ? stock.currentPrice * 0.97 : stock.currentPrice * 1.03,
+                };
+            });
+            setTradingSignals(signals);
+        };
+
+        useEffect(() =&gt; {
+            generateSignals();
+        }, [portfolio]);
+
+        // Calculate metrics
+        const metrics = portfolio.reduce((acc, stock) =&gt; {
+            const value = stock.shares * stock.currentPrice;
+            const cost = stock.shares * stock.avgPrice;
+            return {
+                totalValue: acc.totalValue + value,
+                totalCost: acc.totalCost + cost,
+                totalGainLoss: acc.totalGainLoss + (value - cost)
+            };
+        }, { totalValue: 0, totalCost: 0, totalGainLoss: 0 });
+
+        const totalReturn = metrics.totalCost &gt; 0 ? ((metrics.totalGainLoss / metrics.totalCost) * 100).toFixed(2) : &#x27;0.00&#x27;;
+
+        // Mobile nav
+        const MobileNav = () =&gt; (
+            &lt;div className={`fixed inset-0 bg-slate-950 z-50 transform transition-transform duration-300 ${mobileMenuOpen ? &#x27;translate-x-0&#x27; : &#x27;translate-x-full&#x27;}`}&gt;
+                &lt;div className=&quot;p-6&quot;&gt;
+                    &lt;div className=&quot;flex justify-between items-center mb-8&quot;&gt;
+                        &lt;h2 className=&quot;text-2xl font-bold text-white&quot;&gt;Menu&lt;/h2&gt;
+                        &lt;button onClick={() =&gt; setMobileMenuOpen(false)} className=&quot;text-white&quot;&gt;&lt;X /&gt;&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div className=&quot;space-y-3&quot;&gt;
+                        {[
+                            { id: &#x27;home&#x27;, label: &#x27;Home&#x27;, icon: Home },
+                            { id: &#x27;portfolio&#x27;, label: &#x27;Portfolio&#x27;, icon: PieChart },
+                            { id: &#x27;screener&#x27;, label: &#x27;Screener&#x27;, icon: Filter },
+                            { id: &#x27;backtest&#x27;, label: &#x27;Backtest&#x27;, icon: Activity },
+                            { id: &#x27;signals&#x27;, label: &#x27;Signals&#x27;, icon: Target },
+                            { id: &#x27;settings&#x27;, label: &#x27;Settings&#x27;, icon: Settings },
+                        ].map(item =&gt; (
+                            &lt;button key={item.id} onClick={() =&gt; { setActiveTab(item.id); setMobileMenuOpen(false); }}
+                                className={`w-full flex items-center gap-3 p-4 rounded-lg ${activeTab === item.id ? &#x27;bg-blue-500 text-white&#x27; : &#x27;bg-white/5 text-gray-300&#x27;}`}&gt;
+                                &lt;item.icon /&gt;
+                                &lt;span className=&quot;font-semibold&quot;&gt;{item.label}&lt;/span&gt;
+                            &lt;/button&gt;
+                        ))}
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        );
+
+        return (
+            &lt;div className=&quot;min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950&quot;&gt;
+
+                {/* Header */}
+                &lt;div className=&quot;sticky top-0 z-40 bg-white/10 backdrop-blur-lg border-b border-white/20&quot;&gt;
+                    &lt;div className=&quot;flex items-center justify-between p-4&quot;&gt;
+                        &lt;div className=&quot;flex items-center gap-3&quot;&gt;
+                            &lt;BarChart3 /&gt;
+                            &lt;div&gt;
+                                &lt;h1 className=&quot;text-lg font-bold text-white&quot;&gt;Trading Platform Pro&lt;/h1&gt;
+                                &lt;p className=&quot;text-xs text-blue-200&quot;&gt;Universal Stock Access&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;button onClick={() =&gt; setMobileMenuOpen(true)} className=&quot;text-white&quot;&gt;&lt;Menu /&gt;&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;MobileNav /&gt;
+
+                &lt;div className=&quot;p-4 pb-24 max-w-7xl mx-auto&quot;&gt;
+
+                    {/* HOME */}
+                    {activeTab === &#x27;home&#x27; &amp;&amp; (
+                        &lt;div className=&quot;space-y-4&quot;&gt;
+                            &lt;div className=&quot;bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl p-6 border border-blue-500/30&quot;&gt;
+                                &lt;div className=&quot;text-blue-200 text-sm mb-2 flex items-center gap-2&quot;&gt;&lt;DollarSign /&gt;Portfolio Value&lt;/div&gt;
+                                &lt;div className=&quot;text-white font-bold text-4xl mb-2&quot;&gt;${metrics.totalValue.toFixed(2)}&lt;/div&gt;
+                                &lt;div className=&quot;flex items-center gap-3&quot;&gt;
+                                    &lt;div className={`text-xl font-semibold flex items-center gap-1 ${parseFloat(totalReturn) &gt;= 0 ? &#x27;text-green-400&#x27; : &#x27;text-red-400&#x27;}`}&gt;
+                                        {parseFloat(totalReturn) &gt;= 0 ? &lt;TrendingUp /&gt; : &lt;TrendingDown /&gt;}
+                                        {totalReturn}%
+                                    &lt;/div&gt;
+                                    &lt;div className=&quot;text-sm text-gray-300&quot;&gt;${metrics.totalGainLoss.toFixed(2)}&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;button onClick={updateAllPrices} className=&quot;mt-4 flex items-center gap-1 text-xs bg-white/10 px-3 py-1 rounded-lg text-white&quot;&gt;
+                                    &lt;RefreshCw /&gt;Update Prices
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+
+                            &lt;div className=&quot;grid grid-cols-2 gap-3&quot;&gt;
+                                &lt;div className=&quot;bg-white/5 rounded-xl p-4 border border-white/10&quot;&gt;
+                                    &lt;div className=&quot;text-gray-400 text-xs mb-1&quot;&gt;Holdings&lt;/div&gt;
+                                    &lt;div className=&quot;text-white font-bold text-2xl&quot;&gt;{portfolio.length}&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div className=&quot;bg-white/5 rounded-xl p-4 border border-white/10&quot;&gt;
+                                    &lt;div className=&quot;text-gray-400 text-xs mb-1&quot;&gt;API Status&lt;/div&gt;
+                                    &lt;div className={`font-bold text-xl ${apiConfig.enabled ? &#x27;text-green-400&#x27; : &#x27;text-yellow-400&#x27;}`}&gt;
+                                        {apiConfig.enabled ? &#x27;LIVE&#x27; : &#x27;OFFLINE&#x27;}
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;div className=&quot;bg-white/5 rounded-xl p-4 border border-white/10&quot;&gt;
+                                &lt;h3 className=&quot;text-white font-semibold mb-3&quot;&gt;Holdings&lt;/h3&gt;
+                                {portfolio.map((stock, i) =&gt; {
+                                    const value = stock.shares * stock.currentPrice;
+                                    const gain = ((stock.currentPrice - stock.avgPrice) / stock.avgPrice * 100).toFixed(2);
+                                    return (
+                                        &lt;div key={i} className=&quot;flex justify-between py-3 border-b border-white/10 last:border-0&quot;&gt;
+                                            &lt;div&gt;
+                                                &lt;div className=&quot;text-white font-semibold&quot;&gt;{stock.symbol}&lt;/div&gt;
+                                                &lt;div className=&quot;text-gray-400 text-sm&quot;&gt;${stock.currentPrice.toFixed(2)}&lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div className=&quot;text-right&quot;&gt;
+                                                &lt;div className=&quot;text-white font-semibold&quot;&gt;${value.toFixed(0)}&lt;/div&gt;
+                                                &lt;div className={`text-sm ${parseFloat(gain) &gt;= 0 ? &#x27;text-green-400&#x27; : &#x27;text-red-400&#x27;}`}&gt;
+                                                    {gain}%
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    );
+                                })}
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    )}
+
+                    {/* PORTFOLIO */}
+                    {activeTab === &#x27;portfolio&#x27; &amp;&amp; (
+                        &lt;div className=&quot;space-y-4&quot;&gt;
+                            &lt;div className=&quot;flex justify-between items-center&quot;&gt;
+                                &lt;h2 className=&quot;text-2xl font-bold text-white&quot;&gt;Portfolio&lt;/h2&gt;
+                                &lt;button onClick={() =&gt; setEditingStock({ type: &#x27;add&#x27; })} className=&quot;bg-green-500 text-white px-4 py-2 rounded-lg flex items-center gap-2&quot;&gt;
+                                    &lt;Plus /&gt;Add
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+
+                            {editingStock?.type === &#x27;add&#x27; &amp;&amp; (
+                                &lt;div className=&quot;fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4&quot;&gt;
+                                    &lt;div className=&quot;bg-slate-900 rounded-2xl p-6 max-w-md w-full border border-white/20&quot;&gt;
+                                        &lt;h3 className=&quot;text-xl font-bold text-white mb-4&quot;&gt;Add Any Stock&lt;/h3&gt;
+                                        &lt;div className=&quot;space-y-3&quot;&gt;
+                                            &lt;div&gt;
+                                                &lt;input
+                                                    type=&quot;text&quot;
+                                                    placeholder=&quot;Symbol (ANY stock: AAPL, TSLA, etc.)&quot;
+                                                    value={newStock.symbol}
+                                                    onChange={(e) =&gt; setNewStock({...newStock, symbol: e.target.value})}
+                                                    onBlur={(e) =&gt; handleSymbolLookup(e.target.value)}
+                                                    className=&quot;w-full bg-white/10 text-white px-4 py-3 rounded-lg border border-white/20 uppercase&quot;
+                                                /&gt;
+                                                {lookupLoading &amp;&amp; &lt;div className=&quot;text-blue-400 text-xs mt-1&quot;&gt;Looking up price...&lt;/div&gt;}
+                                                {apiConfig.enabled &amp;&amp; &lt;div className=&quot;text-green-400 text-xs mt-1&quot;&gt;✓ Live price lookup enabled&lt;/div&gt;}
+                                            &lt;/div&gt;
+                                            &lt;input type=&quot;number&quot; placeholder=&quot;Shares&quot; value={newStock.shares}
+                                                onChange={(e) =&gt; setNewStock({...newStock, shares: e.target.value})}
+                                                className=&quot;w-full bg-white/10 text-white px-4 py-3 rounded-lg border border-white/20&quot; /&gt;
+                                            &lt;input type=&quot;number&quot; step=&quot;0.01&quot; placeholder=&quot;Price&quot; value={newStock.avgPrice}
+                                                onChange={(e) =&gt; setNewStock({...newStock, avgPrice: e.target.value})}
+                                                className=&quot;w-full bg-white/10 text-white px-4 py-3 rounded-lg border border-white/20&quot; /&gt;
+                                        &lt;/div&gt;
+                                        &lt;div className=&quot;flex gap-3 mt-6&quot;&gt;
+                                            &lt;button onClick={addStock} className=&quot;flex-1 bg-green-500 text-white py-3 rounded-lg font-semibold&quot;&gt;Add&lt;/button&gt;
+                                            &lt;button onClick={() =&gt; setEditingStock(null)} className=&quot;flex-1 bg-gray-600 text-white py-3 rounded-lg font-semibold&quot;&gt;Cancel&lt;/button&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            )}
+
+                            {portfolio.map((stock, i) =&gt; (
+                                &lt;div key={i} className=&quot;bg-white/5 rounded-xl p-4 border border-white/10&quot;&gt;
+                                    &lt;div className=&quot;flex justify-between mb-3&quot;&gt;
+                                        &lt;div&gt;
+                                            &lt;div className=&quot;text-xl font-bold text-white&quot;&gt;{stock.symbol}&lt;/div&gt;
+                                            &lt;div className=&quot;text-gray-400 text-sm&quot;&gt;{stock.name}&lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;button onClick={() =&gt; removeStock(i)} className=&quot;text-red-400&quot;&gt;&lt;Trash2 /&gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;div className=&quot;grid grid-cols-3 gap-2 text-sm&quot;&gt;
+                                        &lt;div&gt;&lt;div className=&quot;text-gray-400 text-xs&quot;&gt;Shares&lt;/div&gt;&lt;div className=&quot;text-white font-semibold&quot;&gt;{stock.shares}&lt;/div&gt;&lt;/div&gt;
+                                        &lt;div&gt;&lt;div className=&quot;text-gray-400 text-xs&quot;&gt;Price&lt;/div&gt;&lt;div className=&quot;text-white font-semibold&quot;&gt;${stock.currentPrice.toFixed(2)}&lt;/div&gt;&lt;/div&gt;
+                                        &lt;div&gt;&lt;div className=&quot;text-gray-400 text-xs&quot;&gt;Value&lt;/div&gt;&lt;div className=&quot;text-white font-semibold&quot;&gt;${(stock.shares * stock.currentPrice).toFixed(0)}&lt;/div&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            ))}
+                        &lt;/div&gt;
+                    )}
+
+                    {/* SCREENER */}
+                    {activeTab === &#x27;screener&#x27; &amp;&amp; (
+                        &lt;div className=&quot;space-y-4&quot;&gt;
+                            &lt;h2 className=&quot;text-2xl font-bold text-white&quot;&gt;Universal Stock Search&lt;/h2&gt;
+
+                            &lt;div className=&quot;bg-white/5 rounded-xl p-4 border border-white/10&quot;&gt;
+                                &lt;label className=&quot;text-white font-semibold mb-2 block&quot;&gt;Enter Stock Symbols (comma-separated)&lt;/label&gt;
+                                &lt;input
+                                    type=&quot;text&quot;
+                                    placeholder=&quot;AAPL, TSLA, GOOGL, MSFT, AMZN...&quot;
+                                    value={searchSymbols}
+                                    onChange={(e) =&gt; setSearchSymbols(e.target.value)}
+                                    className=&quot;w-full bg-white/10 text-white px-4 py-3 rounded-lg border border-white/20 mb-3&quot;
+                                /&gt;
+                                &lt;button
+                                    onClick={() =&gt; searchStocks(searchSymbols)}
+                                    disabled={screenerLoading}
+                                    className=&quot;w-full bg-blue-500 text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2&quot;
+                                &gt;
+                                    {screenerLoading ? &lt;&gt;&lt;RefreshCw className=&quot;animate-spin&quot; /&gt;Searching...&lt;/&gt; : &lt;&gt;&lt;Search /&gt;Search Stocks&lt;/&gt;}
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+
+                            {screenerResults.length &gt; 0 &amp;&amp; (
+                                &lt;div className=&quot;space-y-3&quot;&gt;
+                                    &lt;h3 className=&quot;text-white font-semibold&quot;&gt;{screenerResults.length} Results&lt;/h3&gt;
+                                    {screenerResults.map((stock, i) =&gt; (
+                                        &lt;div key={i} className=&quot;bg-white/5 rounded-xl p-4 border border-white/10&quot;&gt;
+                                            &lt;div className=&quot;flex justify-between&quot;&gt;
+                                                &lt;div&gt;
+                                                    &lt;div className=&quot;text-lg font-bold text-white&quot;&gt;{stock.symbol}&lt;/div&gt;
+                                                    &lt;div className=&quot;text-gray-400 text-sm&quot;&gt;{stock.name}&lt;/div&gt;
+                                                &lt;/div&gt;
+                                                &lt;div className=&quot;text-right&quot;&gt;
+                                                    &lt;div className=&quot;text-lg font-bold text-white&quot;&gt;${stock.price.toFixed(2)}&lt;/div&gt;
+                                                    &lt;div className={`text-sm ${stock.changePercent &gt;= 0 ? &#x27;text-green-400&#x27; : &#x27;text-red-400&#x27;}`}&gt;
+                                                        {stock.changePercent &gt;= 0 ? &#x27;+&#x27; : &#x27;&#x27;}{stock.changePercent.toFixed(2)}%
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    ))}
+                                &lt;/div&gt;
+                            )}
+                        &lt;/div&gt;
+                    )}
+
+                    {/* BACKTEST */}
+                    {activeTab === &#x27;backtest&#x27; &amp;&amp; (
+                        &lt;div className=&quot;space-y-4&quot;&gt;
+                            &lt;h2 className=&quot;text-2xl font-bold text-white&quot;&gt;Backtest Strategy&lt;/h2&gt;
+
+                            &lt;div className=&quot;bg-white/5 rounded-xl p-4 border border-white/10 space-y-3&quot;&gt;
+                                &lt;div&gt;
+                                    &lt;label className=&quot;text-gray-300 text-sm mb-2 block&quot;&gt;Initial Capital&lt;/label&gt;
+                                    &lt;input type=&quot;number&quot; value={backtestConfig.initialCapital}
+                                        onChange={(e) =&gt; setBacktestConfig({...backtestConfig, initialCapital: parseFloat(e.target.value)})}
+                                        className=&quot;w-full bg-white/10 text-white px-3 py-2 rounded-lg border border-white/20&quot; /&gt;
+                                &lt;/div&gt;
+                                &lt;button onClick={runBacktest} disabled={backtestRunning}
+                                    className=&quot;w-full bg-purple-500 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2&quot;&gt;
+                                    {backtestRunning ? &lt;&gt;&lt;RefreshCw className=&quot;animate-spin&quot; /&gt;Running...&lt;/&gt; : &lt;&gt;&lt;Play /&gt;Run Backtest&lt;/&gt;}
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+
+                            {backtestResults &amp;&amp; (
+                                &lt;div className=&quot;space-y-4&quot;&gt;
+                                    &lt;div className=&quot;grid grid-cols-2 gap-3&quot;&gt;
+                                        &lt;div className=&quot;bg-green-500/20 rounded-xl p-4 border border-green-500/30&quot;&gt;
+                                            &lt;div className=&quot;text-green-300 text-xs mb-1&quot;&gt;Total Return&lt;/div&gt;
+                                            &lt;div className=&quot;text-2xl font-bold text-green-400&quot;&gt;{backtestResults.totalReturn}%&lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div className=&quot;bg-blue-500/20 rounded-xl p-4 border border-blue-500/30&quot;&gt;
+                                            &lt;div className=&quot;text-blue-300 text-xs mb-1&quot;&gt;Final Equity&lt;/div&gt;
+                                            &lt;div className=&quot;text-2xl font-bold text-white&quot;&gt;${backtestResults.finalEquity}&lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div className=&quot;bg-white/5 rounded-xl p-4 border border-white/10&quot;&gt;
+                                            &lt;div className=&quot;text-gray-400 text-xs mb-1&quot;&gt;Win Rate&lt;/div&gt;
+                                            &lt;div className=&quot;text-xl font-bold text-white&quot;&gt;{backtestResults.winRate}%&lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div className=&quot;bg-white/5 rounded-xl p-4 border border-white/10&quot;&gt;
+                                            &lt;div className=&quot;text-gray-400 text-xs mb-1&quot;&gt;Trades&lt;/div&gt;
+                                            &lt;div className=&quot;text-xl font-bold text-white&quot;&gt;{backtestResults.totalTrades}&lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            )}
+                        &lt;/div&gt;
+                    )}
+
+                    {/* SIGNALS */}
+                    {activeTab === &#x27;signals&#x27; &amp;&amp; (
+                        &lt;div className=&quot;space-y-4&quot;&gt;
+                            &lt;div className=&quot;flex justify-between items-center&quot;&gt;
+                                &lt;h2 className=&quot;text-2xl font-bold text-white&quot;&gt;Trading Signals&lt;/h2&gt;
+                                &lt;button onClick={generateSignals} className=&quot;bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center gap-2&quot;&gt;
+                                    &lt;RefreshCw /&gt;Refresh
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+
+                            {tradingSignals.map((signal, i) =&gt; (
+                                &lt;div key={i} className={`rounded-xl p-4 border-l-4 ${
+                                    signal.signal === &#x27;BUY&#x27; ? &#x27;bg-green-500/10 border-green-500&#x27; :
+                                    signal.signal === &#x27;SELL&#x27; ? &#x27;bg-red-500/10 border-red-500&#x27; :
+                                    &#x27;bg-blue-500/10 border-blue-500&#x27;
+                                }`}&gt;
+                                    &lt;div className=&quot;flex justify-between mb-2&quot;&gt;
+                                        &lt;div&gt;
+                                            &lt;div className=&quot;text-xl font-bold text-white&quot;&gt;{signal.symbol}&lt;/div&gt;
+                                            &lt;div className=&quot;text-sm text-gray-300&quot;&gt;{signal.reason}&lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div className={`px-4 py-2 rounded-lg font-bold ${
+                                            signal.signal === &#x27;BUY&#x27; ? &#x27;bg-green-500&#x27; :
+                                            signal.signal === &#x27;SELL&#x27; ? &#x27;bg-red-500&#x27; : &#x27;bg-blue-500&#x27;
+                                        } text-white`}&gt;{signal.signal}&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div className=&quot;grid grid-cols-3 gap-2 text-xs&quot;&gt;
+                                        &lt;div&gt;&lt;div className=&quot;text-gray-400&quot;&gt;Target&lt;/div&gt;&lt;div className=&quot;text-green-400 font-semibold&quot;&gt;${signal.target.toFixed(2)}&lt;/div&gt;&lt;/div&gt;
+                                        &lt;div&gt;&lt;div className=&quot;text-gray-400&quot;&gt;Stop&lt;/div&gt;&lt;div className=&quot;text-red-400 font-semibold&quot;&gt;${signal.stopLoss.toFixed(2)}&lt;/div&gt;&lt;/div&gt;
+                                        &lt;div&gt;&lt;div className=&quot;text-gray-400&quot;&gt;Confidence&lt;/div&gt;&lt;div className=&quot;text-white font-semibold&quot;&gt;{signal.confidence}%&lt;/div&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            ))}
+                        &lt;/div&gt;
+                    )}
+
+                    {/* SETTINGS */}
+                    {activeTab === &#x27;settings&#x27; &amp;&amp; (
+                        &lt;div className=&quot;space-y-4&quot;&gt;
+                            &lt;h2 className=&quot;text-2xl font-bold text-white&quot;&gt;API Settings&lt;/h2&gt;
+
+                            &lt;div className=&quot;bg-blue-500/10 border border-blue-500/30 rounded-xl p-4&quot;&gt;
+                                &lt;h3 className=&quot;text-blue-300 font-semibold mb-2 flex items-center gap-2&quot;&gt;&lt;Zap /&gt;Enable Universal Stock Access&lt;/h3&gt;
+                                &lt;p className=&quot;text-blue-200 text-sm mb-3&quot;&gt;Get FREE API key for unlimited stock access&lt;/p&gt;
+
+                                &lt;div className=&quot;space-y-3&quot;&gt;
+                                    &lt;div&gt;
+                                        &lt;label className=&quot;text-white font-semibold mb-2 block text-sm&quot;&gt;Provider&lt;/label&gt;
+                                        &lt;select value={apiConfig.provider} onChange={(e) =&gt; setApiConfig({...apiConfig, provider: e.target.value})}
+                                            className=&quot;w-full bg-white/10 text-white px-3 py-2 rounded-lg border border-white/20&quot;&gt;
+                                            &lt;option value=&quot;alphavantage&quot;&gt;Alpha Vantage (25 calls/day)&lt;/option&gt;
+                                            &lt;option value=&quot;finnhub&quot;&gt;Finnhub (60 calls/min)&lt;/option&gt;
+                                        &lt;/select&gt;
+                                    &lt;/div&gt;
+                                    &lt;div&gt;
+                                        &lt;label className=&quot;text-white font-semibold mb-2 block text-sm&quot;&gt;API Key&lt;/label&gt;
+                                        &lt;input type=&quot;text&quot; value={apiConfig.apiKey}
+                                            onChange={(e) =&gt; setApiConfig({...apiConfig, apiKey: e.target.value})}
+                                            placeholder=&quot;Enter your API key&quot;
+                                            className=&quot;w-full bg-white/10 text-white px-3 py-2 rounded-lg border border-white/20&quot; /&gt;
+                                    &lt;/div&gt;
+                                    &lt;label className=&quot;flex items-center gap-2&quot;&gt;
+                                        &lt;input type=&quot;checkbox&quot; checked={apiConfig.enabled}
+                                            onChange={(e) =&gt; setApiConfig({...apiConfig, enabled: e.target.checked})}
+                                            className=&quot;w-5 h-5&quot; /&gt;
+                                        &lt;span className=&quot;text-white font-semibold&quot;&gt;Enable Real-Time Data&lt;/span&gt;
+                                    &lt;/label&gt;
+                                    {apiConfig.enabled &amp;&amp; apiConfig.apiKey &amp;&amp; (
+                                        &lt;div className=&quot;bg-green-500/10 border border-green-500/30 rounded-lg p-3&quot;&gt;
+                                            &lt;div className=&quot;flex items-center gap-2 text-green-400&quot;&gt;&lt;CheckCircle /&gt;API Connected!&lt;/div&gt;
+                                        &lt;/div&gt;
+                                    )}
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;div className=&quot;bg-white/5 rounded-xl p-4 border border-white/10&quot;&gt;
+                                &lt;h3 className=&quot;text-white font-semibold mb-2&quot;&gt;Get FREE API Key:&lt;/h3&gt;
+                                &lt;div className=&quot;space-y-2 text-sm text-gray-300&quot;&gt;
+                                    &lt;div&gt;&lt;strong className=&quot;text-white&quot;&gt;Alpha Vantage:&lt;/strong&gt;&lt;br/&gt;&lt;https://www.alphavantage.co/support/#api-key&gt;&lt;/div&gt;
+                                    &lt;div&gt;&lt;strong className=&quot;text-white&quot;&gt;Finnhub:&lt;/strong&gt;&lt;br/&gt;&lt;https://finnhub.io/register&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    )}
+                &lt;/div&gt;
+
+                {/* Bottom Nav */}
+                &lt;div className=&quot;fixed bottom-0 left-0 right-0 bg-white/10 backdrop-blur-lg border-t border-white/20&quot;&gt;
+                    &lt;div className=&quot;flex justify-around py-2&quot;&gt;
+                        {[
+                            { id: &#x27;home&#x27;, icon: Home, label: &#x27;Home&#x27; },
+                            { id: &#x27;portfolio&#x27;, icon: PieChart, label: &#x27;Portfolio&#x27; },
+                            { id: &#x27;screener&#x27;, icon: Filter, label: &#x27;Search&#x27; },
+                            { id: &#x27;backtest&#x27;, icon: Activity, label: &#x27;Test&#x27; },
+                            { id: &#x27;signals&#x27;, icon: Target, label: &#x27;Signals&#x27; },
+                        ].map(item =&gt; (
+                            &lt;button key={item.id} onClick={() =&gt; setActiveTab(item.id)}
+                                className={`flex flex-col items-center gap-1 px-2 py-2 rounded-lg ${
+                                    activeTab === item.id ? &#x27;text-blue-400 bg-blue-500/20&#x27; : &#x27;text-gray-400&#x27;
+                                }`}&gt;
+                                &lt;item.icon /&gt;
+                                &lt;span className=&quot;text-[10px] font-medium&quot;&gt;{item.label}&lt;/span&gt;
+                            &lt;/button&gt;
+                        ))}
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        );
+    };
+
+    ReactDOM.render(&lt;TradingPlatform /&gt;, document.getElementById(&#x27;root&#x27;));
+&lt;/script&gt;</code></pre></div><div style="display:contents" dir="auto"><p id="30a5a6f6-1acf-8047-99fe-ee5cb3ee3190" class="">&lt;/body&gt;<br/>&lt;/html&gt;</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
